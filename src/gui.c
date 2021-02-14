@@ -15472,6 +15472,7 @@ int main(int argc, char *argv[])
 
 #ifdef __APPLE__
 	/* Setup OS X style menus */
+	/* // Disabled (just rely on Gtk)
 	GtkMacMenuGroup *group = gtk_mac_menu_add_app_menu_group();
 	gtk_mac_menu_add_app_menu_item(group,
 	                               GTK_MENU_ITEM(about_item), NULL);
@@ -15485,6 +15486,7 @@ int main(int argc, char *argv[])
 
 	gtk_widget_hide(menu_bar);
 	gtk_mac_menu_set_menu_bar(GTK_MENU_SHELL(menu_bar));
+	*/
 #endif
 
 	/* Not playing game and not making choice */
