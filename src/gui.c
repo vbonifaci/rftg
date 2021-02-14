@@ -30,7 +30,7 @@
 /* Apple OS X specific-code */
 #ifdef __APPLE__
 #include "CoreFoundation/CoreFoundation.h"
-#include "gtk-mac-menu.h"
+//#include "gtk-mac-menu.h"
 #endif
 
 #define TITLE "Race for the Galaxy " RELEASE
