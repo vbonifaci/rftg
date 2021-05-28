@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15409F750DCB9D6C00BC6E83 /* GLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15409F740DCB9D6C00BC6E83 /* GLib.framework */; };
-		15409F790DCB9D7A00BC6E83 /* Gtk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15409F780DCB9D7A00BC6E83 /* Gtk.framework */; };
-		15409F7D0DCB9D8800BC6E83 /* Cairo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15409F7C0DCB9D8800BC6E83 /* Cairo.framework */; };
 		2060857C10FD520000D02923 /* loadsave.c in Sources */ = {isa = PBXBuildFile; fileRef = 2060857B10FD520000D02923 /* loadsave.c */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		9C28009A10768CDA0091054D /* network in Resources */ = {isa = PBXBuildFile; fileRef = 9C28007A10768CDA0091054D /* network */; };
@@ -27,11 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		15409F740DCB9D6C00BC6E83 /* GLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLib.framework; path = /Library/Frameworks/GLib.framework; sourceTree = "<absolute>"; };
 		15409F780DCB9D7A00BC6E83 /* Gtk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gtk.framework; path = /Library/Frameworks/Gtk.framework; sourceTree = "<absolute>"; };
 		15409F7C0DCB9D8800BC6E83 /* Cairo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cairo.framework; path = /Library/Frameworks/Cairo.framework; sourceTree = "<absolute>"; };
 		2060857B10FD520000D02923 /* loadsave.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = loadsave.c; path = ../loadsave.c; sourceTree = SOURCE_ROOT; };
+		4D254E1725DA00AB000AC5D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9C28007A10768CDA0091054D /* network */ = {isa = PBXFileReference; lastKnownFileType = folder; name = network; path = ../network; sourceTree = "<group>"; };
 		9C2800A710768D470091054D /* RFTG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFTG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,9 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15409F750DCB9D6C00BC6E83 /* GLib.framework in Frameworks */,
-				15409F790DCB9D7A00BC6E83 /* Gtk.framework in Frameworks */,
-				15409F7D0DCB9D8800BC6E83 /* Cairo.framework in Frameworks */,
 				D586A9F6106EC7CC000716A2 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,9 +175,17 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RFTG" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				Base,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* RFTG */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -249,7 +251,7 @@
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
+				4D254E1725DA00AB000AC5D2 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -260,13 +262,34 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/opt/gtk/include/gtk-2.0/",
+					"/usr/local/opt/glib/include/glib-2.0/",
+					"/usr/local/Cellar/glib/2.66.7/lib/glib-2.0/include/",
+					/usr/local/opt/cairo/include/cairo/,
+					"/usr/local/opt/pango/include/pango-1.0/",
+					/usr/local/opt/harfbuzz/include/harfbuzz/,
+					"/usr/local/Cellar/gtk+/2.24.33/lib/gtk-2.0/include/",
+					"/usr/local/opt/gdk-pixbuf/include/gdk-pixbuf-2.0/",
+					"/usr/local/opt/atk/include/atk-1.0/",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/opt/glib/lib/,
+					/usr/local/opt/cairo/lib/,
+					/usr/local/opt/gtk/lib/,
+					"/usr/local/opt/gdk-pixbuf/lib/",
+					"/usr/local/opt/gtk+/lib/",
+					"/usr/local/opt/gtk+3/lib/",
+				);
 				PRODUCT_NAME = RFTG;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -276,11 +299,32 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = i386;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/opt/gtk/include/gtk-2.0/",
+					"/usr/local/opt/glib/include/glib-2.0/",
+					"/usr/local/Cellar/glib/2.66.7/lib/glib-2.0/include/",
+					/usr/local/opt/cairo/include/cairo/,
+					"/usr/local/opt/pango/include/pango-1.0/",
+					/usr/local/opt/harfbuzz/include/harfbuzz/,
+					"/usr/local/Cellar/gtk+/2.24.33/lib/gtk-2.0/include/",
+					"/usr/local/opt/gdk-pixbuf/include/gdk-pixbuf-2.0/",
+					"/usr/local/opt/atk/include/atk-1.0/",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/opt/glib/lib/,
+					/usr/local/opt/cairo/lib/,
+					/usr/local/opt/gtk/lib/,
+					"/usr/local/opt/gdk-pixbuf/lib/",
+					"/usr/local/opt/gtk+/lib/",
+					"/usr/local/opt/gtk+3/lib/",
+				);
 				PRODUCT_NAME = RFTG;
 				WRAPPER_EXTENSION = app;
 			};
@@ -289,40 +333,32 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				/Library/Frameworks/Cairo.framework/Headers = /Library/Frameworks/Cairo.framework/Headers;
-				/Library/Frameworks/GLib.framework/Headers = /Library/Frameworks/GLib.framework/Headers;
-				ARCHS = i386;
-				GCC_VERSION = 4.0;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					/Library/Frameworks/Cairo.framework/Headers,
-					/Library/Frameworks/GLib.framework/Headers,
-					/Library/Frameworks/Gtk.framework/Headers,
-				);
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				VALID_ARCHS = i386;
+				HEADER_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USE_HEADERMAP = NO;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				/Library/Frameworks/Cairo.framework/Headers = /Library/Frameworks/Cairo.framework/Headers;
-				/Library/Frameworks/GLib.framework/Headers = /Library/Frameworks/GLib.framework/Headers;
-				ARCHS = i386;
-				GCC_VERSION = 4.0;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					/Library/Frameworks/Cairo.framework/Headers,
-					/Library/Frameworks/GLib.framework/Headers,
-					/Library/Frameworks/Gtk.framework/Headers,
-				);
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				VALID_ARCHS = i386;
+				HEADER_SEARCH_PATHS = "";
+				SDKROOT = macosx;
+				USE_HEADERMAP = NO;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
